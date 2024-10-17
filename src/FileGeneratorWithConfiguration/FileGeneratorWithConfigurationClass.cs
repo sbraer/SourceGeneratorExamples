@@ -63,7 +63,7 @@ internal sealed class FileGeneratorWithConfigurationClass : IIncrementalGenerato
         tx.WriteLine();
         tx.WriteLine($"namespace {config.Namespace};");
         tx.WriteLine();
-        tx.WriteLine($@"[global::System.CodeDom.Compiler.GeneratedCode(""{typeof(FileGeneratorWithConfigurationClass).Assembly.GetName().Name}"", ""{DateTime.UtcNow:yyyy-MM-dd HH:mm:ss}"")]");
+        tx.WriteLine($@"[global::System.CodeDom.Compiler.GeneratedCodeAttribute(""{typeof(FileGeneratorWithConfigurationClass).Assembly.GetName().Name}"", ""{typeof(FileGeneratorWithConfigurationClass).Assembly.GetName().Version}"")]");
         tx.WriteLine($"public sealed class {csvFile.ClassName}");
         tx.WriteLine("{");
         tx.Indent++;
