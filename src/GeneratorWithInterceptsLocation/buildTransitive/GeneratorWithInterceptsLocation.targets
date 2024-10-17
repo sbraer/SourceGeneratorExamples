@@ -1,0 +1,8 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<InterceptorsPreviewNamespaces>$(InterceptorsPreviewNamespaces);CodeGenerated</InterceptorsPreviewNamespaces>
+	</PropertyGroup>
+	<Target Name="DebugMessage" BeforeTargets="Build">
+		<Message Text="Import GeneratorWithInterceptsLocation.targets" Importance="high" />
+	</Target>
+</Project>

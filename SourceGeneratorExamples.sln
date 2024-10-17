@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileGenerator", "src\FileGenerator\FileGenerator.csproj", "{F378DEB4-538F-40BC-8B74-7E3A24439848}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileGenerator1", "FileGenerator1", "{F9629C5D-6475-462E-88A1-9E0A51D9EB7E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileGeneratorConsoleApp", "src\FileGeneratorConsoleApp\FileGeneratorConsoleApp.csproj", "{D222BF03-35E6-4253-868D-74AE2F383142}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileGeneratorWithConfiguration", "FileGeneratorWithConfiguration", "{CB981A52-CB2E-4A0A-83DC-9C10BFE912A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileGeneratorWithConfiguration", "src\FileGeneratorWithConfiguration\FileGeneratorWithConfiguration.csproj", "{562ACF24-AB60-4669-8CC1-3BE66A87C3EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileGeneratorWithConfigurationConsoleApp", "src\FileGeneratorWithConfigurationConsoleApp\FileGeneratorWithConfigurationConsoleApp.csproj", "{85234B4F-DBEE-4651-9E78-C5E164CE8827}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeneratorFromAttribute", "GeneratorFromAttribute", "{190E47CC-CE82-419C-AC21-98804FCD92A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratorFromAttribute", "src\GeneratorFromAttribute\GeneratorFromAttribute.csproj", "{AA59D398-0550-4687-A5C2-186CE13ABC59}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratorFromAttributeConsoleApp", "src\GeneratorFromAttributeConsoleApp\GeneratorFromAttributeConsoleApp.csproj", "{CBB4B0F0-8E57-4313-AF9C-36A44341D0DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GeneratorWithInterceptsLocation", "GeneratorWithInterceptsLocation", "{AF35E110-B5C8-4D20-8116-8A8D54F92BF0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratorWithInterceptsLocation", "src\GeneratorWithInterceptsLocation\GeneratorWithInterceptsLocation.csproj", "{D1451EBA-8215-44A8-962B-FBC23FC956D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratorWithInterceptsLocationConsoleApp", "src\GeneratorWithInterceptsLocationConsoleApp\GeneratorWithInterceptsLocationConsoleApp.csproj", "{DC67F987-1DC2-4F15-BA54-3E416ABAA1ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Extra", "_Extra", "{3AEAC9E9-8B67-47B8-9D5D-123FFD09002D}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F378DEB4-538F-40BC-8B74-7E3A24439848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F378DEB4-538F-40BC-8B74-7E3A24439848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F378DEB4-538F-40BC-8B74-7E3A24439848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F378DEB4-538F-40BC-8B74-7E3A24439848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D222BF03-35E6-4253-868D-74AE2F383142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D222BF03-35E6-4253-868D-74AE2F383142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D222BF03-35E6-4253-868D-74AE2F383142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D222BF03-35E6-4253-868D-74AE2F383142}.Release|Any CPU.Build.0 = Release|Any CPU
+		{562ACF24-AB60-4669-8CC1-3BE66A87C3EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{562ACF24-AB60-4669-8CC1-3BE66A87C3EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{562ACF24-AB60-4669-8CC1-3BE66A87C3EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{562ACF24-AB60-4669-8CC1-3BE66A87C3EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85234B4F-DBEE-4651-9E78-C5E164CE8827}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85234B4F-DBEE-4651-9E78-C5E164CE8827}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85234B4F-DBEE-4651-9E78-C5E164CE8827}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85234B4F-DBEE-4651-9E78-C5E164CE8827}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA59D398-0550-4687-A5C2-186CE13ABC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA59D398-0550-4687-A5C2-186CE13ABC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA59D398-0550-4687-A5C2-186CE13ABC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA59D398-0550-4687-A5C2-186CE13ABC59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB4B0F0-8E57-4313-AF9C-36A44341D0DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB4B0F0-8E57-4313-AF9C-36A44341D0DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB4B0F0-8E57-4313-AF9C-36A44341D0DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB4B0F0-8E57-4313-AF9C-36A44341D0DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1451EBA-8215-44A8-962B-FBC23FC956D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1451EBA-8215-44A8-962B-FBC23FC956D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1451EBA-8215-44A8-962B-FBC23FC956D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1451EBA-8215-44A8-962B-FBC23FC956D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC67F987-1DC2-4F15-BA54-3E416ABAA1ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC67F987-1DC2-4F15-BA54-3E416ABAA1ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC67F987-1DC2-4F15-BA54-3E416ABAA1ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC67F987-1DC2-4F15-BA54-3E416ABAA1ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F378DEB4-538F-40BC-8B74-7E3A24439848} = {F9629C5D-6475-462E-88A1-9E0A51D9EB7E}
+		{D222BF03-35E6-4253-868D-74AE2F383142} = {F9629C5D-6475-462E-88A1-9E0A51D9EB7E}
+		{562ACF24-AB60-4669-8CC1-3BE66A87C3EC} = {CB981A52-CB2E-4A0A-83DC-9C10BFE912A7}
+		{85234B4F-DBEE-4651-9E78-C5E164CE8827} = {CB981A52-CB2E-4A0A-83DC-9C10BFE912A7}
+		{AA59D398-0550-4687-A5C2-186CE13ABC59} = {190E47CC-CE82-419C-AC21-98804FCD92A7}
+		{CBB4B0F0-8E57-4313-AF9C-36A44341D0DA} = {190E47CC-CE82-419C-AC21-98804FCD92A7}
+		{D1451EBA-8215-44A8-962B-FBC23FC956D9} = {AF35E110-B5C8-4D20-8116-8A8D54F92BF0}
+		{DC67F987-1DC2-4F15-BA54-3E416ABAA1ED} = {AF35E110-B5C8-4D20-8116-8A8D54F92BF0}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {12FBE9A6-271C-440A-BD2D-6A43E765DACA}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+﻿Console.WriteLine(ExampleText1.Content());
