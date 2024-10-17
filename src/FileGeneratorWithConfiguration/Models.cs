@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FileGeneratorWithConfiguration;
+﻿namespace FileGeneratorWithConfiguration;
 
 public class Config(string nameSpace, string extension)
 {

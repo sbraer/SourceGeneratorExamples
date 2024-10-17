@@ -1,6 +1,5 @@
 ﻿using Microsoft.CodeAnalysis.Text;
 using Microsoft.CodeAnalysis;
-using System;
 using System.CodeDom.Compiler;
 using System.Globalization;
 using System.IO;

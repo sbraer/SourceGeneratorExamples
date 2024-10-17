@@ -1,6 +1,5 @@
 ﻿using Microsoft.CodeAnalysis.Text;
 using Microsoft.CodeAnalysis;
-using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -65,7 +64,7 @@ internal sealed class FileGeneratorWithConfigurationClass : IIncrementalGenerato
         tx.WriteLine();
         tx.WriteLine($@"[global::System.CodeDom.Compiler.GeneratedCodeAttribute(""{typeof(FileGeneratorWithConfigurationClass).Assembly.GetName().Name}"", ""{typeof(FileGeneratorWithConfigurationClass).Assembly.GetName().Version}"")]");
         tx.WriteLine($"public sealed class {csvFile.ClassName}");
-        tx.WriteLine("{");
+        tx.WriteLine('{');
         tx.Indent++;
 
         List<string> fieldList = [];
@@ -85,7 +84,7 @@ internal sealed class FileGeneratorWithConfigurationClass : IIncrementalGenerato
 
         tx.WriteLine();
         tx.WriteLine("public override string ToString()");
-        tx.WriteLine("{");
+        tx.WriteLine('{');
         tx.Indent++;
         tx.Write("return $\"");
         foreach (var field in fieldList)
@@ -94,9 +93,9 @@ internal sealed class FileGeneratorWithConfigurationClass : IIncrementalGenerato
         }
         tx.WriteLine("\";");
         tx.Indent--;
-        tx.WriteLine("}");
+        tx.WriteLine('}');
         tx.Indent--;
-        tx.WriteLine("}");
+        tx.WriteLine('}');
 
         Debug.Assert(tx.Indent == 0);
         context.AddSource($"{csvFile.ClassName}.g.cs", writer.ToString());
