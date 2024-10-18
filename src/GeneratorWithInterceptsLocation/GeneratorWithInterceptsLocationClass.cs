@@ -44,9 +44,9 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
             namespace CodeGenerated;
 
             {{generatedCodeAttribute}}
-            public static class Helper
+            internal static class Helper
             {
-                public static string[] GetProperties<T>() where T : class => [];
+                internal static string[] GetProperties<T>() where T : class => [];
             }
             """;
 
@@ -117,7 +117,7 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
         tx.WriteLine("file sealed class InterceptsLocationAttribute : Attribute");
         tx.WriteLine('{');
         tx.Indent++;
-        tx.WriteLine("public InterceptsLocationAttribute(string filePath, int line, int column) {}");
+        tx.WriteLine("internal InterceptsLocationAttribute(string filePath, int line, int column) {}");
         tx.Indent--;
         tx.WriteLine('}');
         tx.WriteLine("#pragma warning restore CS9113");
@@ -146,7 +146,7 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
             }
 
             var className = item.ObjClass.ToDisplayString().Replace(".", string.Empty);
-            tx.WriteLine($"public static string[] GetProperties{className}<T>() where T : class");
+            tx.WriteLine($"internal static string[] GetProperties{className}<T>() where T : class");
             tx.WriteLine('{');
             tx.Indent++;
             tx.WriteLine("return [");
