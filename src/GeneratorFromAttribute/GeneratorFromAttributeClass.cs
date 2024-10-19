@@ -167,7 +167,7 @@ public class GeneratorFromAttributeClass : IIncrementalGenerator
         return (className, symbol.DeclaredAccessibility, namespacesClass, masterType);
     }
 
-    private void CreateSourceCode(SourceProductionContext ctx, ImmutableArray<(string TypeName, Accessibility ClassAccessibility, string Namespaces, MasterType MasterType)> collectedClasses)
+    private static void CreateSourceCode(SourceProductionContext ctx, ImmutableArray<(string TypeName, Accessibility ClassAccessibility, string Namespaces, MasterType MasterType)> collectedClasses)
     {
         //if (!Debugger.IsAttached) Debugger.Launch();
         foreach (var info in collectedClasses)
