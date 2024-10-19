@@ -1,6 +1,6 @@
 ﻿using GeneratorFromAttributeExample;
 namespace GeneratorFromAttributeConsoleApp;
 
-[GeneratedAttribute(typeof(MyObject), GeneratorNotTypeRecognized.ThrowException)]
-[GeneratedAttribute(typeof(OtherObject))]
+[GenerateSetProperty<MyObject>(GeneratorNotTypeRecognized.ThrowException)]
+[GenerateSetProperty<OtherObject>()]
 internal static partial class ClassHelper { }

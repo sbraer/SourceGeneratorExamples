@@ -24,10 +24,10 @@ public class GeneratorFromAttributeClass : IIncrementalGenerator
 
         IncrementalValuesProvider<(string TypeName, Accessibility ClassAccessibility, string? Namespaces, MasterType masterType)> provider =
             context.SyntaxProvider.ForAttributeWithMetadataName(
-                "GeneratorFromAttributeExample.GeneratedAttribute",
+                "GeneratorFromAttributeExample.GenerateSetPropertyAttribute`1",
                 predicate: FilterClass,
                 transform: CreateObjCollection);
-        
+
         var collectedClasses = provider.Collect();
         context.RegisterSourceOutput(collectedClasses, CreateSourceCode!);
     }
@@ -46,22 +46,15 @@ public class GeneratorFromAttributeClass : IIncrementalGenerator
 
                 {{generatedCodeAttribute}}
                 [global::System.AttributeUsage(global::System.AttributeTargets.Class, AllowMultiple = true, Inherited = false)]
-                public sealed class GeneratedAttribute : global::System.Attribute
+                public sealed class GenerateSetPropertyAttribute<T>(GeneratorNotTypeRecognized generatorNotTypeRecognized = GeneratorNotTypeRecognized.CompilationError) : global::System.Attribute where T : class
                 {
-                    public Type Type { get; }
-                    public GeneratorNotTypeRecognized GeneratorNotTypeRecognized { get; }
-
-                    public GeneratedAttribute(Type type, GeneratorNotTypeRecognized generatorNotTypeRecognized = GeneratorNotTypeRecognized.CompilationError)
-                    {
-                        Type = type;
-                        GeneratorNotTypeRecognized = generatorNotTypeRecognized;
-                    }
+                    public GeneratorNotTypeRecognized GeneratorNotTypeRecognized { get; } = generatorNotTypeRecognized;
                 }
 
                 public enum GeneratorNotTypeRecognized : int { Skip = 0, ThrowException = 1, CompilationError = 2 }
                 """;
 
-                var fileName = "GeneratorFromAttributeExample.GeneratedAttribute.g.cs";
+                var fileName = "GeneratorFromAttributeExample.GenerateSetPropertyAttribute.g.cs";
                 context.AddSource(fileName, source);
             }
 
@@ -136,18 +129,19 @@ public class GeneratorFromAttributeClass : IIncrementalGenerator
 
         foreach (var attributeData in context.Attributes)
         {
-            var typeArgument0 = attributeData.ConstructorArguments[0];
-            if (typeArgument0.Value is not ITypeSymbol typeSymbol) continue;
+            var attributeType = attributeData.AttributeClass!;
+            var typeArguments = attributeType.TypeArguments;
+            var typeSymbol = typeArguments[0];
             if (classNames.Contains(typeSymbol.Name)) continue;
             classNames.Add(typeSymbol.Name);
 
             var generatorNotTypeRecognized = GeneratorNotTypeRecognized.CompilationError;
-            if (attributeData.ConstructorArguments.Length == 2)
+            if (attributeData.ConstructorArguments.Length == 1)
             {
-                var typeArgument1 = attributeData.ConstructorArguments[1];
-                if (typeArgument1.Kind == TypedConstantKind.Enum)
+                var typeArgument0 = attributeData.ConstructorArguments[0];
+                if (typeArgument0.Kind == TypedConstantKind.Enum)
                 {
-                    generatorNotTypeRecognized = (GeneratorNotTypeRecognized)int.Parse(typeArgument1.Value!.ToString());
+                    generatorNotTypeRecognized = (GeneratorNotTypeRecognized)int.Parse(typeArgument0.Value!.ToString());
                 }
             }
 
