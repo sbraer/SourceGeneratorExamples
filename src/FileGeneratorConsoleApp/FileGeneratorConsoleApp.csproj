@@ -21,8 +21,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\FileGenerator\FileGenerator.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer"/>
-		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.11.0">
+		<ProjectReference Include="..\FileGenerator\FileGenerator.csproj" ReferenceOutputAssembly="false" OutputItemType="Analyzer" />
+		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="4.14.0">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>

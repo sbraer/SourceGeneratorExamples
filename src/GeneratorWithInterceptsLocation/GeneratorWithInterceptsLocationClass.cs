@@ -81,12 +81,12 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
         return new MethodInformation(typeSymbol, path, line, column);
     }
 
-    private static void CreateSourceCode(SourceProductionContext ctx, ImmutableArray<MethodInformation?> methodSymbols)
+    private static void CreateSourceCode(SourceProductionContext ctx, ImmutableArray<MethodInformation> methodSymbols)
     {
         //if (!System.Diagnostics.Debugger.IsAttached) System.Diagnostics.Debugger.Launch();
         var coll = methodSymbols.GroupBy(
-            t => t!.TypeSymbol,
-            t => t!,
+            t => t.TypeSymbol,
+            t => t,
             SymbolEqualityComparer.Default
         ).Select(group => new
         {
