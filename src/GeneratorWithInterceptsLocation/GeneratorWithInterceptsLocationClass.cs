@@ -138,16 +138,11 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
         {
             foreach (var symbol in item.LocationInformations)
             {
-                w("[InterceptsLocation(");
-                tx.Indent++;
-                w($"filePath: @\"{symbol.Path}\",");
-                w($"line: {symbol.Line},");
-                w($"column: {symbol.Column})]");
-                tx.Indent--;
+                w($"[InterceptsLocation(column: {symbol.Column}, line: {symbol.Line}, filePath: @\"{symbol.Path}\")]");
             }
 
             var className = item.ObjClass.ToDisplayString().Replace(".", string.Empty);
-            w($"internal static string[] GetProperties{className}<T>() where T : class");
+            w($"internal static string[] GetProperties{className}()");
             w("{");
             tx.Indent++;
             w("return [");
