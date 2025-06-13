@@ -99,6 +99,7 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
 
         using StringWriter writer = new(CultureInfo.InvariantCulture);
         using IndentedTextWriter tx = new(writer);
+        tx.NewLine = "\n";
         void w(string txt = "") => tx.WriteLine(txt);
 
         w($$"""
