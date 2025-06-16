@@ -15,7 +15,9 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
 {
     private record MethodInformation(ITypeSymbol TypeSymbol, string Path, int Line, int Column);
 
-    private static readonly string generatedCodeAttribute = $@"[global::System.CodeDom.Compiler.GeneratedCodeAttribute(""{typeof(GeneratorWithInterceptsLocationClass).Assembly.GetName().Name}"", ""{typeof(GeneratorWithInterceptsLocationClass).Assembly.GetName().Version}"")]";
+    private static readonly string generatedCodeAttribute = $"""
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("{typeof(GeneratorWithInterceptsLocationClass).Assembly.GetName().Name}", "{typeof(GeneratorWithInterceptsLocationClass).Assembly.GetName().Version}")]
+        """;
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
     {
@@ -135,7 +137,9 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
         {
             foreach (var symbol in item.LocationInformations)
             {
-                w($"[InterceptsLocation(column: {symbol.Column}, line: {symbol.Line}, filePath: @\"{symbol.Path}\")]");
+                w($"""
+                [InterceptsLocation(column: {symbol.Column}, line: {symbol.Line}, filePath: @"{symbol.Path}")]
+                """);
             }
 
             var className = item.ObjClass.ToDisplayString().Replace(".", string.Empty);
@@ -149,8 +153,8 @@ public sealed class GeneratorWithInterceptsLocationClass : IIncrementalGenerator
             foreach (var property in properties)
             {
                 w($"""
-                    "{property.Name}",
-                    """);
+                "{property.Name}",
+                """);
             }
 
             w("];");
